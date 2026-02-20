@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 216 30% 6%;
+    --foreground: 220 14% 91%;
+
+    --card: 220 26% 11%;
+    --card-foreground: 220 14% 91%;
+
+    --popover: 220 26% 11%;
+    --popover-foreground: 220 14% 91%;
+
+    --primary: 155 62% 53%;
+    --primary-foreground: 216 30% 6%;
+
+    --secondary: 220 26% 16%;
+    --secondary-foreground: 220 14% 91%;
+
+    --muted: 220 20% 14%;
+    --muted-foreground: 218 11% 65%;
+
+    --accent: 160 100% 45%;
+    --accent-foreground: 216 30% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 48 96% 53%;
+    --warning-foreground: 216 30% 6%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 155 62% 53%;
+
+    --radius: 0.875rem;
+
+    --sidebar-background: 226 71% 5%;
+    --sidebar-foreground: 220 14% 91%;
+    --sidebar-primary: 155 62% 53%;
+    --sidebar-primary-foreground: 216 30% 6%;
+    --sidebar-accent: 220 26% 14%;
+    --sidebar-accent-foreground: 220 14% 91%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 155 62% 53%;
+
+    /* Custom ODOP tokens */
+    --neon-glow: 0 0 20px hsl(155 62% 53% / 0.4), 0 0 40px hsl(155 62% 53% / 0.2);
+    --neon-glow-accent: 0 0 20px hsl(160 100% 45% / 0.4), 0 0 40px hsl(160 100% 45% / 0.2);
+    --glass-bg: hsl(220 26% 11% / 0.6);
+    --glass-border: hsl(220 20% 25% / 0.3);
+    --nav-bg: 226 71% 5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .neon-glow {
+    box-shadow: var(--neon-glow);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px hsl(155 62% 53% / 0.5), 0 0 20px hsl(155 62% 53% / 0.3);
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(155 62% 53%), hsl(160 100% 45%));
+  }
+
+  .gradient-dark {
+    background: linear-gradient(180deg, hsl(226 71% 5%), hsl(216 30% 6%));
+  }
+
+  .gradient-radial-glow {
+    background: radial-gradient(ellipse at 50% 0%, hsl(155 62% 53% / 0.15) 0%, transparent 60%);
+  }
+}
