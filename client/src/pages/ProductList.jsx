@@ -7,6 +7,7 @@ import {
 import { Search, LocationOn, Star, FilterList } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import API from '../api/axios';
+import { getAssetUrl } from '../config';
 import { motion } from 'framer-motion';
 
 const ProductList = () => {
@@ -417,7 +418,7 @@ const ProductList = () => {
                                                 className="product-image"
                                                 component="img"
                                                 height="220"
-                                                image={product.image}
+                                                image={getAssetUrl(product.image)}
                                                 alt={product.name}
                                                 sx={{ 
                                                     objectFit: 'cover',

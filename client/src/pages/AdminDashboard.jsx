@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import { PendingActions, CheckCircle, Warning } from '@mui/icons-material';
 import API from '../api/axios';
+import { getAssetUrl } from '../config';
 
 const AdminDashboard = () => {
     const [users, setUsers] = useState([]);
@@ -137,7 +138,7 @@ const AdminDashboard = () => {
                                                         size="small" 
                                                         variant="outlined"
                                                         component="a" 
-                                                        href={`http://localhost:5000/${user.aadhaarFile}`} 
+                                                        href={getAssetUrl(user.aadhaarFile)} 
                                                         target="_blank"
                                                     >
                                                         Aadhaar
@@ -148,7 +149,7 @@ const AdminDashboard = () => {
                                                         size="small" 
                                                         variant="outlined"
                                                         component="a" 
-                                                        href={`http://localhost:5000/${user.shopPhoto}`} 
+                                                        href={getAssetUrl(user.shopPhoto)} 
                                                         target="_blank"
                                                     >
                                                         Shop Photo

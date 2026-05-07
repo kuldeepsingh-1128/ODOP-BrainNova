@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Typography, Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton, Dialog, DialogTitle, DialogContent, TextField, Box } from '@mui/material';
 import { Delete, Edit, Add } from '@mui/icons-material';
 import API from '../api/axios';
+import { getAssetUrl } from '../config';
 
 const SellerDashboard = () => {
     const [products, setProducts] = useState([]);
@@ -104,7 +105,7 @@ const SellerDashboard = () => {
                         {products.map((product) => (
                             <TableRow key={product._id}>
                                 <TableCell>
-                                    <img src={`http://localhost:5000/${product.image}`} alt={product.name} style={{ width: 50, height: 50, objectFit: 'cover' }} />
+                                    <img src={getAssetUrl(product.image)} alt={product.name} style={{ width: 50, height: 50, objectFit: 'cover' }} />
                                 </TableCell>
                                 <TableCell>{product.name}</TableCell>
                                 <TableCell>{product.category}</TableCell>

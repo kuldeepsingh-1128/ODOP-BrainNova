@@ -302,7 +302,7 @@ const ProductList = () => {
                                             <CardMedia
                                                 component="img"
                                                 height="240"
-                                                image={`http://localhost:5000/${product.image}`}
+                                                image={product.image}
                                                 alt={product.name}
                                                 sx={{ 
                                                     objectFit: 'cover',

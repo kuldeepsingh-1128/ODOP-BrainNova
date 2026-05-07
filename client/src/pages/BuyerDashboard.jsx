@@ -9,6 +9,7 @@ import {
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import API from '../api/axios';
+import { getAssetUrl } from '../config';
 import { useAuth } from '../context/AuthContext';
 
 const BuyerDashboard = () => {
@@ -127,7 +128,7 @@ const BuyerDashboard = () => {
                             <CardMedia
                                 component="img"
                                 height="200"
-                                image={product.image || '/placeholder.jpg'}
+                                image={getAssetUrl(product.image) || '/placeholder.jpg'}
                                 alt={product.name}
                                 sx={{ objectFit: 'cover' }}
                             />

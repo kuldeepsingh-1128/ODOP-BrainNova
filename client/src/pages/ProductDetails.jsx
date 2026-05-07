@@ -6,6 +6,7 @@ import {
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ChevronLeft, LocalShipping, Security, Payments, ShoppingCart } from '@mui/icons-material';
 import API from '../api/axios';
+import { getAssetUrl } from '../config';
 import { motion } from 'framer-motion';
 
 const ProductDetails = () => {
@@ -59,7 +60,7 @@ const ProductDetails = () => {
                             boxShadow: '0 20px 60px rgba(0,0,0,0.08)'
                         }}>
                             <img
-                                src={`http://localhost:5000/${product.image}`}
+                                src={getAssetUrl(product.image)}
                                 alt={product.name}
                                 style={{ width: '100%', height: 'auto', display: 'block' }}
                             />
